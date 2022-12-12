@@ -1,0 +1,64 @@
+@media (max-width: 505px) {
+  .app {
+    padding: 30px 15px;
+  }
+  .progress {
+    margin-left: 15px;
+    margin-right: 15px;
+    &__items {
+      grid-template-columns: 1fr;
+      li {
+        transition: none;
+        &:hover {
+          border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    &__head {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      grid-gap: 15px;
+    }
+    &__btn {
+      &:hover {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        svg {
+          path {
+            fill: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+      &:active {
+        border: 2px solid rgb(156, 181, 142);
+        svg {
+          path {
+            fill: rgb(156, 181, 142);
+          }
+        }
+      }
+    }
+  }
+  .result {
+    &__items {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: 375px) {
+  body {
+    padding: 0 10px;
+  }
+  .result {
+    &__item {
+      grid-gap: 0.5em;
+    }
+  }
+}
+@media (max-width: 325px) {
+  .app {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

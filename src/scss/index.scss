@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+@import "./normalize.scss";
+
+body {
+  padding: 0 15px;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #9cb58e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.app {
+  max-width: 520px;
+  width: 100%;
+  border-radius: 30px;
+  padding: 40px 30px;
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    height: 50px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:before {
+    width: 95%;
+    bottom: -10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+  }
+  &:after {
+    width: 90%;
+    bottom: -20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: -2;
+  }
+  h1 {
+    margin: 0 0 15px;
+    font-size: 2em;
+    line-height: 115%;
+  }
+}
+.result {
+  text-align: center;
+  button {
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    border-radius: 30px;
+    border: 0;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #9cb58e;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  svg {
+    width: 100px;
+    height: 100px;
+    path {
+      fill: #809474;
+    }
+  }
+  &__items {
+    margin: 20px 15px 15px;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr;
+    grid-gap: 1em;
+    &-text {
+      font-size: 1em;
+      text-align: left;
+      line-height: 120%;
+    }
+    & + .result__item {
+      margin-top: 15px;
+    }
+  }
+  &__title {
+    max-width: 90%;
+    margin: 10px auto 0;
+  }
+}
+.progress {
+  height: 10px;
+  border-radius: 30px;
+  background-color: rgb(237, 237, 237);
+  margin-bottom: 25px;
+  &__bar {
+    height: 100%;
+    border-radius: 30px;
+    width: 80%;
+    background: rgb(18, 231, 48);
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(
+      90deg,
+      rgb(240, 244, 230) 0%,
+      rgb(156, 181, 142) 100%
+    );
+  }
+  &__head {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+  }
+  &__text {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    li {
+      padding: 15px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        border: 2px solid rgb(156, 181, 142);
+      }
+    }
+  }
+  &__btn {
+    display: inline-block;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    svg {
+      width: 16px;
+      height: 16px;
+      path {
+        transition: all 0.2s ease-in-out;
+        fill: rgba(0, 0, 0, 0.1);
+      }
+    }
+    &:hover {
+      border: 2px solid rgb(156, 181, 142);
+      svg {
+        path {
+          fill: rgb(156, 181, 142);
+        }
+      }
+    }
+  }
+}
+
+@import "./media.scss";
