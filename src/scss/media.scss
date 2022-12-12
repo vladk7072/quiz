@@ -29,7 +29,7 @@
           }
         }
       }
-      &:active {
+      &:target {
         border: 2px solid rgb(156, 181, 142);
         svg {
           path {
